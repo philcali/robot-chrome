@@ -1,0 +1,10 @@
+!html
+
+head
+  js @src="lib/jquery.js"
+  title "Robot Vision"
+
+body
+  ul
+    li a @href="#" "Configured Machine 1"
+    li a @href="#" "Configured Machine 2"
