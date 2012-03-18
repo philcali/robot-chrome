@@ -1,0 +1,20 @@
+{
+  "name": "Robot Vision",
+  "version": "0.1.0",
+  "description": "Simple extension to interface with a Robot Vision host.",
+  "icons": {
+    "16": "images/icon.png"
+  },
+  "default_locale": "en",
+  "browser_action": {
+    "default_icon": "images/icon.png",
+    "default_title": "Robot Vision",
+    "default_popup": "popup.html"
+  },
+  "content-scripts" : [
+    {
+      "matches": ["*://*/view.html"],
+      "js": ["lib/control.js", "lib/connect.js"]
+    }
+  ]
+}
