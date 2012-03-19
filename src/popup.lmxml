@@ -1,5 +1,6 @@
 !html
 
+// "This may be removed"
 head
   js @src="lib/jquery.js"
   title "Robot Vision"
