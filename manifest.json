@@ -12,11 +12,5 @@
     "default_icon": "images/icon.png",
     "default_title": "Robot Vision",
     "default_popup": "popup.html"
-  },
-  "content_scripts": [
-    {
-      "matches": ["*://*/view.html"],
-      "js": ["lib/control.js", "lib/connect.js"]
-    }
-  ]
+  }
 }
