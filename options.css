@@ -1,0 +1,9 @@
+body {
+  font-size: 12px;
+  font-family: Verdana, Geneva, sans-serif;
+}
+
+#host-table td {
+  padding: 5px;
+  font-weight: bold;
+}

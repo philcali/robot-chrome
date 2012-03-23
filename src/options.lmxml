@@ -1,0 +1,21 @@
+!html
+
+html
+  head
+    js @src="lib/jquery.js"
+    js @src="options.js"
+    css @href="options.css"
+  body
+    fieldset
+      legend "Robot Vision Hosts:"
+      table #host-table
+        tr
+          th "Host"
+          th "Key"
+          th "Actions"
+    fieldset
+      legend "New Host:"
+      p
+        input#host @type="text" @placeholder="Host"
+        input#key @type="text" @placeholder="Key"
+      input#add @type="button" @value="Add"
