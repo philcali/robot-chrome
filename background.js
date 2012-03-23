@@ -20,7 +20,7 @@ chrome.pageAction.onClicked.addListener(function(tab) {
 });
 
 function withKey(url, callback) {
-  if (localStorage.getItem(url) !== undefined) {
+  if (localStorage.getItem(url)) {
     callback(localStorage.getItem(url));
   }
 }
