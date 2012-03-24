@@ -42,8 +42,8 @@ $(function() {
     }
 
     localStorage.setItem(url, $(key).val());
+    window.location.href = window.location.href;
 
-    reload();
     return false;
   });
 
