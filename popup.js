@@ -1,6 +1,4 @@
 $(function() {
-  var icon = '<img src="images/url.png"/>';
-
   if (localStorage.length == 0) {
     $("ul").append(
       '<li>Add vision hosts in the option page</li>'
@@ -13,8 +11,8 @@ $(function() {
         title = localStorage.getItem(url + '-title');
 
     $("ul").append(
-      '<li><a class="host" id="' + time + '" href="' + url +
-      '">' + [icon, title].join(' ') + '</a></li>'
+      '<li><a class="host" id="' + time + '" href="' +
+      url + '">' + title + '</a></li>'
     );
   }
 
