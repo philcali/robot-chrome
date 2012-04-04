@@ -2,6 +2,7 @@
 
 html
   head
+    title "Robot Vision Control"
     js @src="lib/jquery.js"
     js @src="options.js"
     css @href="options.css"
@@ -9,13 +10,10 @@ html
     fieldset
       legend "Robot Vision Hosts:"
       table #host-table
-        tr
-          th "Host"
-          th "Key"
-          th "Actions"
     fieldset
       legend "New Host:"
       p
         input#host @type="text" @placeholder="Host"
         input#key @type="text" @placeholder="Key"
+        input#title @type="text" @placeholder="Title"
       input#add @type="button" @value="Add"
