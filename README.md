@@ -12,6 +12,6 @@ popup box to launch a designated robot vision url.
 ## Requirements
 
 - [rvc][rvc] installed and running on host
-- rvc generated key (rvc --gen-secret web)
+- rvc generated key (`rvc gen`)
 
 [rvc]: https://github.com/philcali/robot-vision#readme
