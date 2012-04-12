@@ -6,12 +6,11 @@ $(function() {
   }
 
   for (var i=0; i < localStorage.length; i += 3) {
-    var time = localStorage.key(i),
-        url = localStorage.getItem(time),
+    var url = localStorage.getItem(i),
         title = localStorage.getItem(url + '-title');
 
     $("ul").append(
-      '<li><a class="host" id="' + time + '" href="' +
+      '<li><a class="host" id="' + i + '" href="' +
       url + '">' + title + '</a></li>'
     );
   }

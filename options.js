@@ -8,7 +8,7 @@ $(function() {
   var reload = function() {
     $("#html-table").html('');
     for (var i = 0; i < localStorage.length; i += 3) {
-      var url = localStorage.getItem(localStorage.key(i)),
+      var url = localStorage.getItem(i),
           k = localStorage.getItem(url + '-key'),
           t = localStorage.getItem(url + '-title'),
           del = '<a href="#" class="delete" id="'+ i +'">' + deleteicon + '</a>',
@@ -23,12 +23,11 @@ $(function() {
 
   $(".delete").live("click", function() {
     var i = $(this).attr('id'),
-        k = localStorage.key(i),
-        url = localStorage.getItem(k),
+        url = localStorage.getItem(i),
         res = confirm("Are you sure you want to delete, " + url + "?");
 
     if (res) {
-      localStorage.removeItem(k);
+      localStorage.removeItem(i);
       localStorage.removeItem(url + '-key');
       localStorage.removeItem(url + '-title');
       window.location.href = window.location.href;
@@ -46,7 +45,7 @@ $(function() {
       return false;
     }
 
-    localStorage.setItem((new Date().getTime()) + '', url);
+    localStorage.setItem(localStorage.length, url);
     localStorage.setItem(url + '-key', $(key).val());
     localStorage.setItem(url + '-title', name);
     window.location.href = window.location.href;
