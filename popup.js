@@ -5,15 +5,19 @@ $(function() {
     );
   }
 
-  for (var i=0; i < localStorage.length; i += 3) {
-    var url = localStorage.getItem(i),
-        title = localStorage.getItem(url + '-title');
+  $(localStorage).each(function(index) {
+    var i = localStorage.key(index);
+    console.log(i);
+    if (i.match(/^host\-\d+/)) {
+      var url = localStorage.getItem(i),
+          title = localStorage.getItem(url + '-title');
 
-    $("ul").append(
-      '<li><a class="host" id="' + i + '" href="' +
-      url + '">' + title + '</a></li>'
-    );
-  }
+      $("ul").append(
+        '<li><a class="host" id="' + i + '" href="' +
+        url + '">' + title + '</a></li>'
+      );
+    }
+  });
 
   $(".host").on('click', function() {
     var url = localStorage.getItem($(this).attr('id'));

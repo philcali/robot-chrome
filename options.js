@@ -7,18 +7,21 @@ $(function() {
 
   var reload = function() {
     $("#html-table").html('');
-    for (var i = 0; i < localStorage.length; i += 3) {
-      var url = localStorage.getItem(i),
-          k = localStorage.getItem(url + '-key'),
-          t = localStorage.getItem(url + '-title'),
-          del = '<a href="#" class="delete" id="'+ i +'">' + deleteicon + '</a>',
-          get = '<a href="'+ url +'" class="get" target="_blank">'+ urlicon +'</a>';
+    $(localStorage).each(function(index) {
+      var i = localStorage.key(index);
+      if (i.match(/^host\-\d+/)) {
+        var url = localStorage.getItem(i),
+            k = localStorage.getItem(url + '-key'),
+            t = localStorage.getItem(url + '-title'),
+            del = '<a href="#" class="delete" id="'+ i +'">' + deleteicon + '</a>',
+            get = '<a href="'+ url +'" class="get" target="_blank">'+ urlicon +'</a>';
 
-      $("#host-table").append(
-        "<tr><td>"+ url +"</td><td>"+ k +"</td><td>" + t +
-        "</td><td>"+ [get, del].join(' | ') +"</td></tr>"
+        $("#host-table").append(
+          "<tr><td>"+ url +"</td><td>"+ k +"</td><td>" + t +
+          "</td><td>"+ [get, del].join(' | ') +"</td></tr>"
       );
-    }
+      }
+    });
   };
 
   $(".delete").live("click", function() {
@@ -45,7 +48,7 @@ $(function() {
       return false;
     }
 
-    localStorage.setItem(localStorage.length, url);
+    localStorage.setItem("host-" + localStorage.length, url);
     localStorage.setItem(url + '-key', $(key).val());
     localStorage.setItem(url + '-title', name);
     window.location.href = window.location.href;
