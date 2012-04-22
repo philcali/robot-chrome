@@ -1,23 +1,73 @@
-<!DOCTYPE html><html>
+<!DOCTYPE html><html lang="en">
   <head>
     <title>Robot Vision Control</title>
     <script type="text/javascript" src="lib/jquery.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap-modal.js"></script>
     <script type="text/javascript" src="options.js"></script>
+    <link type="text/css" rel="stylesheet" href="bootstrap/css/bootstrap.min.css"></link>
     <link type="text/css" rel="stylesheet" href="options.css"></link>
   </head>
   <body>
-    <fieldset>
-      <legend>Robot Vision Hosts:</legend>
-      <table id="host-table"></table>
-    </fieldset>
-    <fieldset>
-      <legend>New Host:</legend>
-      <p>
-        <input type="text" placeholder="Host" id="host"></input>
-        <input type="text" placeholder="Key" id="key"></input>
-        <input type="text" placeholder="Title" id="title"></input>
-      </p>
-      <input value="Add" type="button" id="add"></input>
-    </fieldset>
+    <div class="container">
+      <section>
+        <div class="page-header">
+          <h1>Robot Vision Hosts</h1>
+        </div>
+        <table id="host-table" class="table table-bordered table-striped">
+          <tbody></tbody>
+        </table>
+      </section>
+      <section>
+        <div class="row">
+          <div class="offset3 span6">
+            <form class="form-horizontal">
+              <fieldset>
+                <legend>New Host</legend>
+              </fieldset>
+              <div class="control-group">
+                <label for="host" class="control-label">Host</label>
+                <div class="controls">
+                  <input type="text" placeholder="http[s]://*:*/robot-vision.html" id="host"></input>
+                </div>
+              </div>
+              <div class="control-group">
+                <label for="key" class="control-label">Chrome Key</label>
+                <div class="controls">
+                  <input type="text" placeholder="random string" id="key"></input>
+                  <p class="help-block">
+                    Result of
+                    <code>rvc gen</code>
+                  </p>
+                </div>
+              </div>
+              <div class="control-group">
+                <label for="title" class="control-label">Host Title</label>
+                <div class="controls">
+                  <input type="text" placeholder="Vision Host" id="title"></input>
+                  <p class="help-block">Optional entry</p>
+                </div>
+              </div>
+              <div class="form-actions">
+                <button type="submit" id="add" class="btn btn-primary">Add</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div id="confirm-modal" class="modal hide">
+      <div class="modal-header">
+        <a data-dismiss="modal" class="close">x</a>
+        <h3>Robot Vision</h3>
+      </div>
+      <div class="modal-body">
+        <p class="msg">Goes here</p>
+      </div>
+      <div class="modal-footer">
+        <a data-dismiss="modal" class="btn">Cancel</a>
+        <a class="btn confirm btn-primary">OK</a>
+      </div>
+    </div>
   </body>
 </html>

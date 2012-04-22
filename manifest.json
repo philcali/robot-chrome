@@ -1,6 +1,6 @@
 {
   "name": "Robot Vision",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Simple extension to interface with a Robot Vision host.",
   "icons": {
     "16": "images/icon16.png",
@@ -16,6 +16,7 @@
     "default_popup": "popup.html"
   },
   "options_page": "options.html",
+  "homepage_url": "http://philcali.github.com/robot-vision",
   "content_scripts": [
     {
       "matches": ["*://*/robot-vision.html"],
