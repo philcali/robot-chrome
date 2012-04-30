@@ -1,6 +1,6 @@
 {
   "name": "Robot Vision",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Simple extension to interface with a Robot Vision host.",
   "icons": {
     "16": "images/icon16.png",
