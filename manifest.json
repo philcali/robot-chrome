@@ -16,12 +16,13 @@
     "default_popup": "popup.html"
   },
   "options_page": "options.html",
-  "homepage_url": "http://philcali.github.com/robot-vision",
   "content_scripts": [
     {
       "matches": ["*://*/robot-vision.html"],
       "js": [
-        "lib/jquery.js", "lib/viewport.js", "lib/control.js", "lib/connect.js"
+        "lib/jquery.js", "lib/viewport.js",
+        "lib/control.js", "lib/connect.js",
+        "lib/desktop.js", "vendor/bootstrap-modal.js"
       ]
     }
   ]

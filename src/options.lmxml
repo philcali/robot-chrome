@@ -17,7 +17,31 @@ html @lang="en"
           tbody
       section
         >.row
-          >.offset3 .span6
+          >.span6
+            fieldset legend "Robot Vision Control (RVC)"
+            md ```
+Thank you for using RVC! To get the most out of this extension, download the
+the software required for controlling the host machine:
+[rvc.jar](http://philcali.github.com/robot-vision/rvc.jar)
+
+
+1. Launch the app, by double clicking the jar file.
+2. Click on _Generate_, to generate a new key.
+3. Configure more, if you want
+4. Click _Run_.
+
+
+The RVC will be running in the background. You can close the window, and use the
+system tray icon to re-open it (if your OS supports this behavior).
+
+
+Visit the application's github landing page for the intimate details:
+[rvc](http://philcali.github.com/robot-vision/)
+              ```
+            >@style="text-align: center;"
+              a @href="http://philcali.github.com/robot-vision/"
+                img @src="images/icon128.png" @title="Robot Vision Control"
+          >.span6
             form .form-horizontal
               fieldset legend "New Host"
               >.control-group
